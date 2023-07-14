@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}Feedback Form{% endblock %}
+
+{% block css %}
+{% endblock css %}
+
+{% block body %}
+<h1>Feedback Form</h1>
+<form action="{% url 'form:home' %}" method="POST">
+    {% csrf_token %}
+    <div class="container">
+        {{ form.as_p }}
+        <input type="submit" />
+    </div>
+    
+</form>
+{% endblock %}
